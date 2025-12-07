@@ -37,3 +37,4 @@ D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreGU
 D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreGUI\bin\Debug\net10.0-windows\BookStoreGUI.dll.config
 D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreGUI\bin\Debug\net10.0-windows\BouncyCastle.Crypto.dll
 D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreGUI\bin\Debug\net10.0-windows\itextsharp.dll
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreGUI\obj\Debug\net10.0-windows\BookStoreGUI.sourcelink.json

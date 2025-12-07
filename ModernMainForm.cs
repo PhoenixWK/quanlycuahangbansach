@@ -157,6 +157,18 @@ namespace BookStoreGUI
             panelMainContent.Controls.Add(employeePanel);
         }
 
+        private void LoadStatistics()
+        {
+            panelMainContent.Controls.Clear();
+            
+            var statisticsPanel = new StatisticsPanel()
+            {
+                Dock = DockStyle.Fill
+            };
+            
+            panelMainContent.Controls.Add(statisticsPanel);
+        }
+
         private void LoadSalesInvoice()
         {
             panelMainContent.Controls.Clear();
@@ -260,7 +272,7 @@ namespace BookStoreGUI
         private void btnStatistics_Click(object sender, EventArgs e)
         {
             SetActiveButton(btnStatistics);
-            // Load Statistics content
+            LoadStatistics();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

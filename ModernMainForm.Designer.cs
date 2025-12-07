@@ -130,7 +130,7 @@ namespace BookStoreGUI
             this.btnStatistics.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnStatistics.Size = new System.Drawing.Size(240, 50);
             this.btnStatistics.TabIndex = 6;
-            this.btnStatistics.Text = "📊  Thống kê & Báo cáo";
+            this.btnStatistics.Text = "📊  Thống kê";
             this.btnStatistics.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnStatistics.UseVisualStyleBackColor = false;
             this.btnStatistics.Click += new System.EventHandler(this.btnStatistics_Click);
