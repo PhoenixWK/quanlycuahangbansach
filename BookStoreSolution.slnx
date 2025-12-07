@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="BookStoreBLL/BookStoreBLL.csproj" />
+  <Project Path="BookStoreDAL/BookStoreDAL.csproj" />
+  <Project Path="BookStoreDTO/BookStoreDTO.csproj" />
+  <Project Path="BookStoreGUI/BookStoreGUI.csproj" />
+</Solution>

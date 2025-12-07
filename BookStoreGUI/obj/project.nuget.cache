@@ -1,0 +1,79 @@
+{
+  "version": 2,
+  "dgSpecHash": "9PIeHu/Vv7k=",
+  "success": true,
+  "projectFilePath": "D:\\Codes\\Quản lý cửa hàng bán sách\\quan-ly-cua-hang-ban-sach\\BookStoreGUI\\BookStoreGUI.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\xuanp\\.nuget\\packages\\bouncycastle\\1.8.9\\bouncycastle.1.8.9.nupkg.sha512",
+    "C:\\Users\\xuanp\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
+    "C:\\Users\\xuanp\\.nuget\\packages\\google.protobuf\\3.32.0\\google.protobuf.3.32.0.nupkg.sha512",
+    "C:\\Users\\xuanp\\.nuget\\packages\\itextsharp\\5.5.13.3\\itextsharp.5.5.13.3.nupkg.sha512",
+    "C:\\Users\\xuanp\\.nuget\\packages\\k4os.compression.lz4\\1.3.8\\k4os.compression.lz4.1.3.8.nupkg.sha512",
+    "C:\\Users\\xuanp\\.nuget\\packages\\k4os.compression.lz4.streams\\1.3.8\\k4os.compression.lz4.streams.1.3.8.nupkg.sha512",
+    "C:\\Users\\xuanp\\.nuget\\packages\\k4os.hash.xxhash\\1.0.8\\k4os.hash.xxhash.1.0.8.nupkg.sha512",
+    "C:\\Users\\xuanp\\.nuget\\packages\\mysql.data\\9.5.0\\mysql.data.9.5.0.nupkg.sha512",
+    "C:\\Users\\xuanp\\.nuget\\packages\\zstdsharp.port\\0.8.6\\zstdsharp.port.0.8.6.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'BouncyCastle' 1.8.9 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-8xfc-gm6g-vgpv",
+      "projectPath": "D:\\Codes\\Quản lý cửa hàng bán sách\\quan-ly-cua-hang-ban-sach\\BookStoreGUI\\BookStoreGUI.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Codes\\Quản lý cửa hàng bán sách\\quan-ly-cua-hang-ban-sach\\BookStoreGUI\\BookStoreGUI.csproj",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net10.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'BouncyCastle' 1.8.9 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-m44j-cfrm-g8qc",
+      "projectPath": "D:\\Codes\\Quản lý cửa hàng bán sách\\quan-ly-cua-hang-ban-sach\\BookStoreGUI\\BookStoreGUI.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Codes\\Quản lý cửa hàng bán sách\\quan-ly-cua-hang-ban-sach\\BookStoreGUI\\BookStoreGUI.csproj",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net10.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'BouncyCastle' 1.8.9 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-v435-xc8x-wvr9",
+      "projectPath": "D:\\Codes\\Quản lý cửa hàng bán sách\\quan-ly-cua-hang-ban-sach\\BookStoreGUI\\BookStoreGUI.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Codes\\Quản lý cửa hàng bán sách\\quan-ly-cua-hang-ban-sach\\BookStoreGUI\\BookStoreGUI.csproj",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net10.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'BouncyCastle 1.8.9' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net10.0-windows7.0'. This package may not be fully compatible with your project.",
+      "projectPath": "D:\\Codes\\Quản lý cửa hàng bán sách\\quan-ly-cua-hang-ban-sach\\BookStoreGUI\\BookStoreGUI.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Codes\\Quản lý cửa hàng bán sách\\quan-ly-cua-hang-ban-sach\\BookStoreGUI\\BookStoreGUI.csproj",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net10.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "message": "Package 'iTextSharp 5.5.13.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net10.0-windows7.0'. This package may not be fully compatible with your project.",
+      "projectPath": "D:\\Codes\\Quản lý cửa hàng bán sách\\quan-ly-cua-hang-ban-sach\\BookStoreGUI\\BookStoreGUI.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Codes\\Quản lý cửa hàng bán sách\\quan-ly-cua-hang-ban-sach\\BookStoreGUI\\BookStoreGUI.csproj",
+      "libraryId": "iTextSharp",
+      "targetGraphs": [
+        "net10.0-windows7.0"
+      ]
+    }
+  ]
+}

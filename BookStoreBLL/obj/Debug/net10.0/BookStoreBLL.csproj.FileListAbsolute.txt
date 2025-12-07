@@ -1,0 +1,17 @@
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\bin\Debug\net10.0\BookStoreBLL.deps.json
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\bin\Debug\net10.0\BookStoreBLL.dll
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\bin\Debug\net10.0\BookStoreBLL.pdb
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\bin\Debug\net10.0\BookStoreDAL.dll
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\bin\Debug\net10.0\BookStoreDTO.dll
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\bin\Debug\net10.0\BookStoreDAL.pdb
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\bin\Debug\net10.0\BookStoreDTO.pdb
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\obj\Debug\net10.0\BookStoreBLL.csproj.AssemblyReference.cache
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\obj\Debug\net10.0\BookStoreBLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\obj\Debug\net10.0\BookStoreBLL.AssemblyInfoInputs.cache
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\obj\Debug\net10.0\BookStoreBLL.AssemblyInfo.cs
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\obj\Debug\net10.0\BookStoreBLL.csproj.CoreCompileInputs.cache
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\obj\Debug\net10.0\BookStor.51B0A441.Up2Date
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\obj\Debug\net10.0\BookStoreBLL.dll
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\obj\Debug\net10.0\refint\BookStoreBLL.dll
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\obj\Debug\net10.0\BookStoreBLL.pdb
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\obj\Debug\net10.0\ref\BookStoreBLL.dll

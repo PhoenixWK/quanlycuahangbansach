@@ -1,0 +1,11 @@
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDTO\bin\Debug\net10.0\BookStoreDTO.deps.json
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDTO\bin\Debug\net10.0\BookStoreDTO.dll
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDTO\bin\Debug\net10.0\BookStoreDTO.pdb
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDTO\obj\Debug\net10.0\BookStoreDTO.GeneratedMSBuildEditorConfig.editorconfig
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDTO\obj\Debug\net10.0\BookStoreDTO.AssemblyInfoInputs.cache
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDTO\obj\Debug\net10.0\BookStoreDTO.AssemblyInfo.cs
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDTO\obj\Debug\net10.0\BookStoreDTO.csproj.CoreCompileInputs.cache
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDTO\obj\Debug\net10.0\BookStoreDTO.dll
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDTO\obj\Debug\net10.0\refint\BookStoreDTO.dll
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDTO\obj\Debug\net10.0\BookStoreDTO.pdb
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDTO\obj\Debug\net10.0\ref\BookStoreDTO.dll
