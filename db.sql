@@ -74,6 +74,11 @@ CREATE TABLE Sach (
     GiaBan DECIMAL(18, 2) NOT NULL CHECK (GiaBan >= 0),
     SoLuongTon INT NOT NULL CHECK (SoLuongTon >= 0),
     NhaXuatBan NVARCHAR(255) NULL,
+    MoTa TEXT NULL,
+    HinhAnh VARCHAR(500) NULL,
+    NgayXuatBan DATE NULL,
+    SoTrang INT NULL,
+    TrangThai BOOLEAN DEFAULT TRUE,
     
     MaTG INT,
     MaTL INT,
@@ -138,10 +143,10 @@ INSERT INTO TaiKhoan (TenDangNhap, MatKhau, VaiTro, MaNV) VALUES
 ('nhanvien01', 'matkhau123', 'NhanVien', 2); -- Liên kết với Nhân viên có MaNV = 2
 
 -- Thêm Sách
-INSERT INTO Sach (MaSach, TenSach, MaTG, MaTL, GiaBan, SoLuongTon, NhaXuatBan) VALUES
-('S001', N'Tôi thấy hoa vàng trên cỏ xanh', 1, 1, 100000.00, 50, N'Nhà xuất bản Trẻ'),
-('S002', N'Domain-Driven Design', 3, 3, 550000.00, 15, N'Addison-Wesley'),
-('S003', N'The Shining', 2, 1, 250000.00, 30, N'Doubleday');
+INSERT INTO Sach (MaSach, TenSach, MaTG, MaTL, GiaBan, SoLuongTon, NhaXuatBan, MoTa, NgayXuatBan, SoTrang, TrangThai) VALUES
+('S001', N'Tôi thấy hoa vàng trên cỏ xanh', 1, 1, 100000.00, 50, N'Nhà xuất bản Trẻ', N'Một tác phẩm văn học hay về tuổi thơ', '2018-01-01', 320, TRUE),
+('S002', N'Domain-Driven Design', 3, 3, 550000.00, 15, N'Addison-Wesley', N'Sách về thiết kế phần mềm theo domain', '2003-08-30', 560, TRUE),
+('S003', N'The Shining', 2, 1, 250000.00, 30, N'Doubleday', N'Tiểu thuyết kinh dị kinh điển', '1977-01-28', 447, TRUE);
 
 -- Thêm Khách hàng
 INSERT INTO KhachHang (TenKH, SoDienThoai, Email, NgayTao) VALUES 

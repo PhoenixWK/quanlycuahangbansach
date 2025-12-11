@@ -13,3 +13,4 @@ D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDA
 D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDAL\obj\Debug\net10.0\refint\BookStoreDAL.dll
 D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDAL\obj\Debug\net10.0\BookStoreDAL.pdb
 D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDAL\obj\Debug\net10.0\ref\BookStoreDAL.dll
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDAL\obj\Debug\net10.0\BookStoreDAL.sourcelink.json

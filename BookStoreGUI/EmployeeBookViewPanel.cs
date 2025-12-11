@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using BookStoreBLL;
@@ -300,7 +301,7 @@ namespace BookStoreGUI
             booksCardsPanel.SuspendLayout();
 
             int cardWidth = 320;
-            int cardHeight = 120;
+            int cardHeight = 130;
             int margin = 10;
             int x = 0, y = 0;
             int cardsPerRow = 2;
@@ -342,11 +343,23 @@ namespace BookStoreGUI
                 Cursor = Cursors.Hand
             };
 
+            // Book image
+            PictureBox bookImage = new PictureBox
+            {
+                Location = new Point(10, 10),
+                Size = new Size(80, 100),
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                BorderStyle = BorderStyle.FixedSingle
+            };
+
+            // Load book image
+            LoadBookImageForCard(bookImage, book.HinhAnh);
+
             Label titleLabel = new Label
             {
                 Text = book.TenSach ?? "N/A",
-                Location = new Point(10, 10),
-                Size = new Size(width - 20, 25),
+                Location = new Point(100, 10),
+                Size = new Size(width - 110, 25),
                 Font = new Font("Segoe UI", 11, FontStyle.Bold),
                 ForeColor = Color.FromArgb(0, 123, 255)
             };
@@ -354,8 +367,8 @@ namespace BookStoreGUI
             Label authorLabel = new Label
             {
                 Text = $"Tác giả: {book.TenTacGia ?? "N/A"}",
-                Location = new Point(10, 35),
-                Size = new Size(width - 20, 20),
+                Location = new Point(100, 35),
+                Size = new Size(width - 110, 20),
                 Font = new Font("Segoe UI", 9),
                 ForeColor = Color.FromArgb(108, 117, 125)
             };
@@ -363,8 +376,8 @@ namespace BookStoreGUI
             Label categoryLabel = new Label
             {
                 Text = $"Thể loại: {book.TenTheLoai ?? "N/A"}",
-                Location = new Point(10, 55),
-                Size = new Size(width - 20, 20),
+                Location = new Point(100, 55),
+                Size = new Size(width - 110, 20),
                 Font = new Font("Segoe UI", 9),
                 ForeColor = Color.FromArgb(108, 117, 125)
             };
@@ -372,8 +385,8 @@ namespace BookStoreGUI
             Label priceLabel = new Label
             {
                 Text = $"Giá: {book.GiaBan?.ToString("N0") ?? "N/A"} VNĐ",
-                Location = new Point(10, 75),
-                Size = new Size(150, 20),
+                Location = new Point(100, 75),
+                Size = new Size(120, 20),
                 Font = new Font("Segoe UI", 9, FontStyle.Bold),
                 ForeColor = Color.FromArgb(40, 167, 69)
             };
@@ -381,13 +394,13 @@ namespace BookStoreGUI
             Label stockLabel = new Label
             {
                 Text = $"Tồn kho: {book.SoLuongTon ?? 0}",
-                Location = new Point(170, 75),
-                Size = new Size(140, 20),
+                Location = new Point(100, 95),
+                Size = new Size(110, 20),
                 Font = new Font("Segoe UI", 9),
                 ForeColor = book.SoLuongTon > 0 ? Color.FromArgb(40, 167, 69) : Color.FromArgb(220, 53, 69)
             };
 
-            card.Controls.AddRange(new Control[] { titleLabel, authorLabel, categoryLabel, priceLabel, stockLabel });
+            card.Controls.AddRange(new Control[] { bookImage, titleLabel, authorLabel, categoryLabel, priceLabel, stockLabel });
             return card;
         }
 
@@ -405,9 +418,21 @@ namespace BookStoreGUI
                 ForeColor = Color.FromArgb(60, 60, 60)
             };
 
+            // Book image
+            PictureBox bookImage = new PictureBox
+            {
+                Location = new Point(15, 45),
+                Size = new Size(120, 150),
+                SizeMode = PictureBoxSizeMode.StretchImage,
+                BorderStyle = BorderStyle.FixedSingle
+            };
+
+            // Load book image
+            LoadBookImageForDetail(bookImage, book.HinhAnh);
+
             // Book details
-            int yPosition = 50;
-            int spacing = 30;
+            int yPosition = 210;
+            int spacing = 25;
 
             var details = new[]
             {
@@ -422,7 +447,7 @@ namespace BookStoreGUI
                 ("Ngày xuất bản:", book.NgayXuatBan?.ToString("dd/MM/yyyy") ?? "N/A")
             };
 
-            selectedBookDetailPanel.Controls.Add(titleLabel);
+            selectedBookDetailPanel.Controls.AddRange(new Control[] { titleLabel, bookImage });
 
             foreach (var (label, value) in details)
             {
@@ -430,7 +455,7 @@ namespace BookStoreGUI
                 {
                     Text = label,
                     Location = new Point(15, yPosition),
-                    Size = new Size(100, 20),
+                    Size = new Size(90, 20),
                     Font = new Font("Segoe UI", 9, FontStyle.Bold),
                     ForeColor = Color.FromArgb(60, 60, 60)
                 };
@@ -438,8 +463,8 @@ namespace BookStoreGUI
                 Label valueLabel = new Label
                 {
                     Text = value,
-                    Location = new Point(115, yPosition),
-                    Size = new Size(190, 20),
+                    Location = new Point(110, yPosition),
+                    Size = new Size(195, 20),
                     Font = new Font("Segoe UI", 9),
                     ForeColor = Color.FromArgb(80, 80, 80)
                 };
@@ -548,6 +573,110 @@ namespace BookStoreGUI
             }).ToList();
 
             DisplayBooks(filteredBooks);
+        }
+
+        private void LoadBookImageForCard(PictureBox pictureBox, string? imagePath)
+        {
+            if (!string.IsNullOrEmpty(imagePath))
+            {
+                try
+                {
+                    string fullPath = imagePath;
+                    
+                    // If it's a relative path, make it absolute
+                    if (!Path.IsPathRooted(imagePath))
+                    {
+                        string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                        fullPath = Path.Combine(baseDir, imagePath);
+                    }
+                    
+                    if (File.Exists(fullPath))
+                    {
+                        // Create a copy of the image to avoid file locking
+                        using (var originalImage = Image.FromFile(fullPath))
+                        {
+                            pictureBox.Image = new Bitmap(originalImage);
+                        }
+                    }
+                    else
+                    {
+                        SetDefaultCardImage(pictureBox);
+                    }
+                }
+                catch
+                {
+                    SetDefaultCardImage(pictureBox);
+                }
+            }
+            else
+            {
+                SetDefaultCardImage(pictureBox);
+            }
+        }
+
+        private void LoadBookImageForDetail(PictureBox pictureBox, string? imagePath)
+        {
+            if (!string.IsNullOrEmpty(imagePath))
+            {
+                try
+                {
+                    string fullPath = imagePath;
+                    
+                    // If it's a relative path, make it absolute
+                    if (!Path.IsPathRooted(imagePath))
+                    {
+                        string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                        fullPath = Path.Combine(baseDir, imagePath);
+                    }
+                    
+                    if (File.Exists(fullPath))
+                    {
+                        // Create a copy of the image to avoid file locking
+                        using (var originalImage = Image.FromFile(fullPath))
+                        {
+                            pictureBox.Image = new Bitmap(originalImage);
+                        }
+                    }
+                    else
+                    {
+                        SetDefaultDetailImage(pictureBox);
+                    }
+                }
+                catch
+                {
+                    SetDefaultDetailImage(pictureBox);
+                }
+            }
+            else
+            {
+                SetDefaultDetailImage(pictureBox);
+            }
+        }
+
+        private void SetDefaultCardImage(PictureBox pictureBox)
+        {
+            // Create a default book cover for card view
+            var defaultImage = new Bitmap(80, 100);
+            using (Graphics g = Graphics.FromImage(defaultImage))
+            {
+                g.FillRectangle(Brushes.LightGray, 0, 0, 80, 100);
+                g.DrawString("📚", new Font("Segoe UI", 20), Brushes.DarkGray, 25, 25);
+                g.DrawString("No Image", new Font("Segoe UI", 8), Brushes.DarkGray, 10, 70);
+            }
+            pictureBox.Image = defaultImage;
+        }
+
+        private void SetDefaultDetailImage(PictureBox pictureBox)
+        {
+            // Create a default book cover for detail view
+            var defaultImage = new Bitmap(120, 150);
+            using (Graphics g = Graphics.FromImage(defaultImage))
+            {
+                g.FillRectangle(Brushes.LightGray, 0, 0, 120, 150);
+                g.DrawString("📚", new Font("Segoe UI", 30), Brushes.DarkGray, 35, 40);
+                g.DrawString("No Image", new Font("Segoe UI", 10), Brushes.DarkGray, 25, 110);
+            }
+            pictureBox.Image = defaultImage;
         }
     }
 }

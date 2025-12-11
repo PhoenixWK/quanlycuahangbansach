@@ -521,6 +521,9 @@ namespace BookStoreGUI
                 categoryComboBox.DataSource = categories;
                 categoryComboBox.DisplayMember = "TenTL";
                 categoryComboBox.ValueMember = "MaTL";
+                
+                // Update display labels for default selection
+                UpdateDisplayLabels();
             }
             catch (Exception ex)
             {
@@ -539,8 +542,20 @@ namespace BookStoreGUI
                     generatedCode = currentBook.MaSach ?? "";
                     UpdateCodeDisplay(generatedCode);
                     nameTextBox.Text = currentBook.TenSach;
-                authorComboBox.SelectedValue = currentBook.MaTG;
-                categoryComboBox.SelectedValue = currentBook.MaTL;
+                
+                // Set ComboBox values by ID - need to ensure correct data type matching
+                if (int.TryParse(currentBook.MaTG, out int authorId))
+                {
+                    authorComboBox.SelectedValue = authorId;
+                }
+                
+                if (int.TryParse(currentBook.MaTL, out int categoryId))
+                {
+                    categoryComboBox.SelectedValue = categoryId;
+                }
+                
+                // Update display labels after setting values
+                UpdateDisplayLabels();
                 priceNumeric.Value = (decimal)(currentBook.GiaBan ?? 0);
                 stockNumeric.Value = (decimal)(currentBook.SoLuongTon ?? 0);
                 // Load publisher information from database
@@ -549,6 +564,9 @@ namespace BookStoreGUI
                 pagesNumeric.Value = currentBook.SoTrang ?? 0;
                 publishDatePicker.Value = currentBook.NgayXuatBan ?? DateTime.Now;
                 descriptionTextBox.Text = currentBook.MoTa ?? "";
+                
+                // Load book image if exists
+                LoadBookImage(currentBook.HinhAnh);
                 
                 // Update display labels manually since SelectedValue doesn't always trigger events
                 UpdateDisplayLabels();
@@ -585,10 +603,24 @@ namespace BookStoreGUI
 
         private void UpdateDisplayLabels()
         {
-            // Update author display
+            // Update author display  
             if (authorComboBox.SelectedItem is TacGiaDTO selectedAuthor)
             {
                 authorDisplayLabel.Text = $"Tác giả: {selectedAuthor.TenTG}";
+            }
+            else if (authorComboBox.SelectedValue != null)
+            {
+                // Try to find by MaTG value when setting programmatically
+                var authors = (List<TacGiaDTO>)authorComboBox.DataSource;
+                var author = authors?.FirstOrDefault(a => a.MaTG.ToString() == authorComboBox.SelectedValue.ToString());
+                if (author != null)
+                {
+                    authorDisplayLabel.Text = $"Tác giả: {author.TenTG}";
+                }
+                else
+                {
+                    authorDisplayLabel.Text = "";
+                }
             }
             else
             {
@@ -600,24 +632,58 @@ namespace BookStoreGUI
             {
                 categoryDisplayLabel.Text = $"Thể loại: {selectedCategory.TenTL}";
             }
+            else if (categoryComboBox.SelectedValue != null)
+            {
+                // Try to find by MaTL value when setting programmatically
+                var categories = (List<TheLoaiDTO>)categoryComboBox.DataSource;
+                var category = categories?.FirstOrDefault(c => c.MaTL.ToString() == categoryComboBox.SelectedValue.ToString());
+                if (category != null)
+                {
+                    categoryDisplayLabel.Text = $"Thể loại: {category.TenTL}";
+                }
+                else
+                {
+                    categoryDisplayLabel.Text = "";
+                }
+            }
             else
             {
                 categoryDisplayLabel.Text = "";
             }
-        }
-
-        private void LoadBookImage(string? imagePath)
+        }        private void LoadBookImage(string? imagePath)
         {
-            if (!string.IsNullOrEmpty(imagePath) && File.Exists(imagePath))
+            if (!string.IsNullOrEmpty(imagePath))
             {
                 try
                 {
-                    bookImagePictureBox.Image = Image.FromFile(imagePath);
-                    selectedImagePath = imagePath;
+                    string fullPath = imagePath;
+                    
+                    // If it's a relative path, make it absolute
+                    if (!Path.IsPathRooted(imagePath))
+                    {
+                        string baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                        fullPath = Path.Combine(baseDir, imagePath);
+                    }
+                    
+                    if (File.Exists(fullPath))
+                    {
+                        // Create a copy of the image to avoid file locking
+                        using (var originalImage = Image.FromFile(fullPath))
+                        {
+                            bookImagePictureBox.Image = new Bitmap(originalImage);
+                        }
+                        selectedImagePath = fullPath;
+                    }
+                    else
+                    {
+                        // If file doesn't exist, set default image
+                        SetDefaultImage();
+                    }
                 }
-                catch
+                catch (Exception ex)
                 {
-                    // Use default image if can't load
+                    // Log the error and use default image
+                    Console.WriteLine($"Error loading image: {ex.Message}");
                     SetDefaultImage();
                 }
             }

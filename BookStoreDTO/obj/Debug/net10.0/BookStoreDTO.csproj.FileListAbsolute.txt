@@ -9,3 +9,4 @@ D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDT
 D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDTO\obj\Debug\net10.0\refint\BookStoreDTO.dll
 D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDTO\obj\Debug\net10.0\BookStoreDTO.pdb
 D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDTO\obj\Debug\net10.0\ref\BookStoreDTO.dll
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreDTO\obj\Debug\net10.0\BookStoreDTO.sourcelink.json

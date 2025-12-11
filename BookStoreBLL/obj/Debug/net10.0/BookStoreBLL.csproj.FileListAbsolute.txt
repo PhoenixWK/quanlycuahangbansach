@@ -15,3 +15,4 @@ D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBL
 D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\obj\Debug\net10.0\refint\BookStoreBLL.dll
 D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\obj\Debug\net10.0\BookStoreBLL.pdb
 D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\obj\Debug\net10.0\ref\BookStoreBLL.dll
+D:\Codes\Quản lý cửa hàng bán sách\quan-ly-cua-hang-ban-sach\BookStoreBLL\obj\Debug\net10.0\BookStoreBLL.sourcelink.json
